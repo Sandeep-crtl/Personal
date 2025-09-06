@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Floating Hearts */
+
+        .heart {
+            position: fixed;
+            left: 50vw;
+            bottom: -40px;
+            color: #ed0606;
+            font-size: 20px;
+            z-index: 999;
+            animation: floatHearts 6s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatHearts {
+            0% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) scale(1.3) rotate(30deg);
+                opacity: 0;
+            }
+        }
+
+        /* Navbar Styles */
+        nav {
+            background: #000000;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .nav-brand img {
+            height: 60px;
+            margin-right: 0;
+            vertical-align: middle;
+            animation: fadeInDown 2s ease;
+            filter: brightness(0) invert(1);
+        }
+
+
+        .nav-brand h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links li a:hover {
+            color: #ffe6eb;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 40px 20px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 2px solid #535353;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-message {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .as-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            /* fallback background */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .as-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .footer-text p {
+            font-style: italic;
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        /* ✅ Mobile Responsive */
+        @media (max-width: 600px) {
+            .footer-message {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-text h3 {
+                font-size: 1.2rem;
+            }
+
+            .as-logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+
+        .love-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            gap: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .love-section img {
+            width: 45%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .love-text {
+            width: 55%;
+        }
+
+        .love-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .love-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #e91e63;
+        }
+
+        @media(max-width: 768px) {
+            .love-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .love-section img,
+            .love-text {
+                width: 100%;
+            }
+        }
+
+
+        .hotel-section {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            gap: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .hotel-section img {
+            width: 45%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .hotel-text {
+            width: 55%;
+        }
+
+        .hotel-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hotel-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #d81b60;
+        }
+
+        @media(max-width: 768px) {
+            .hotel-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hotel-section img,
+            .hotel-text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">
+            <img src="./Assets/as-logo.png" alt="Our Love Logo" />
+            <h1 style="font-family: 'Poiret One';">AYSA</h1>
+        </div>
+
+    </nav>
+
+
+    <section class="hotel-section">
+        <!-- Left Side Image -->
+        <img src="./Assets/Hotel (2).jpg" alt="Hotel Memories">
+
+        <!-- Right Side Description -->
+        <div class="hotel-text">
+            <h2>🏨 Memories in Our Hotel Stay 💖</h2>
+            <p>We spend more time together in hotels during our <span class="highlight">love journey</span>. Those walls
+                hold countless memories that we created side by side.</p>
+            <p>We talk endlessly, laugh together, care for each other, and feed each other with so much love. Every
+                small act becomes a memory that I carry deep in my heart.</p>
+            <p>We take pictures, record videos, and share little <span class="highlight">naughty moments</span> that
+                make our bond even stronger. These simple yet pure times remind me that happiness lives in togetherness.
+            </p>
+            <p>Lying next to her, holding hands, listening to her heartbeat those moments make the whole world
+                disappear. It feels like time pauses, just to let us live in our own world of love.</p>
+            <p>Every hotel room becomes a chapter in our love story, filled with emotions, laughter, and memories that I
+                will never forget. ❤️</p>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo + Message -->
+            <div class="footer-message">
+                <div class="as-logo">
+                    <img src="./Assets/as-logo.png" alt="AS Logo">
+                </div>
+                <div class="footer-text">
+                    <h3>Made with ❤ by Ashu & Sanju</h3>
+                    <p>"Even in the darkest times, our love shines the brightest."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Our Love Story. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Floating Hearts
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 15 + "px";
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+
+</html>
